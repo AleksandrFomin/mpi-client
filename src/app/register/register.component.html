@@ -35,21 +35,14 @@
         </div>
       </div>
       <div class="form-group">
-        <label for="email">Email</label>
-        <input
-          type="email"
-          class="form-control"
-          name="email"
-          [(ngModel)]="form.email"
-          required
-          email
-          #email="ngModel"
-        />
-        <div class="alert-danger" *ngIf="f.submitted && email.invalid">
-          <div *ngIf="email.errors.required">Email is required</div>
-          <div *ngIf="email.errors.email">
-            Email must be a valid email address
-          </div>
+        <label for="role">Role</label>
+        <select [(ngModel)]="form.role" name="rolesSelect" class="form-control" #rolesSelect="ngModel" required>
+          <option *ngFor="let role of roles; let i = index" [value]="roles[i].id">
+            {{roles[i].name}}
+          </option>
+        </select>
+        <div class="alert-danger" *ngIf="f.submitted && rolesSelect.invalid">
+          <div *ngIf="rolesSelect.errors.required">Role is required</div>
         </div>
       </div>
       <div class="form-group">

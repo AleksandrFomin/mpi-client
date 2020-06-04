@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
@@ -11,10 +12,11 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { BoardUserComponent } from './board-user/board-user.component';
-import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
 import { ProfileComponent } from './profile/profile.component';
 
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
+import { BoardSellerComponent } from './board-seller/board-seller.component';
+import { BoardCarrierComponent } from './board-carrier/board-carrier.component';
 
 @NgModule({
   declarations: [
@@ -24,14 +26,16 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
     HomeComponent,
     BoardAdminComponent,
     BoardUserComponent,
-    BoardModeratorComponent,
-    ProfileComponent
+    ProfileComponent,
+    BoardSellerComponent,
+    BoardCarrierComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
