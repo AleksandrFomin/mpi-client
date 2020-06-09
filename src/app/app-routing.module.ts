@@ -9,9 +9,10 @@ import { BoardUserComponent } from './board-user/board-user.component';
 import { BoardSellerComponent } from './board-seller/board-seller.component';
 import { BoardCarrierComponent } from './board-carrier/board-carrier.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
+import {UserPageComponent} from './user-page/user-page.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: UserPageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent },
