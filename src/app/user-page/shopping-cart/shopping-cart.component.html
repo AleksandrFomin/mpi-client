@@ -7,12 +7,12 @@
 
     <ul>
       <li *ngFor="let order of orders.productOrders">
-        {{ order.product.name }} - {{ order.quantity}} pcs.
+        {{ order.product.name }} - {{ order.quantity}} kg.
       </li>
     </ul>
 
     <button class="btn btn-light btn-block" (click)="finishOrder()"
-            [disabled]="orders.productOrders.length == 0">Checkout
+            [disabled]="orders.productOrders.length == 0">Make order
     </button>
   </div>
 </div>

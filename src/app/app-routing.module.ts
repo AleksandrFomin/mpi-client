@@ -12,11 +12,11 @@ import { BoardAdminComponent } from './board-admin/board-admin.component';
 import {UserPageComponent} from './user-page/user-page.component';
 
 const routes: Routes = [
-  { path: 'home', component: UserPageComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'user', component: BoardUserComponent },
+  { path: 'user', component: UserPageComponent },
   { path: 'seller', component: BoardSellerComponent },
   { path: 'carrier', component: BoardCarrierComponent },
   { path: 'admin', component: BoardAdminComponent },

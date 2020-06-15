@@ -4,6 +4,8 @@ import {ProductOrders} from '../../model/product-orders.model';
 import {Subject} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 
+const PRODUCTS_API = 'http://localhost:8080/api/products/';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -29,7 +31,7 @@ export class EcommerceService {
   }
 
   getAllProducts() {
-    return this.http.get(this.productsUrl);
+    return this.http.get(PRODUCTS_API);
   }
 
   saveOrder(order: ProductOrders) {

@@ -11,7 +11,7 @@ import {EcommerceService} from '../services/ecommerce.service.service';
 export class OrdersComponent implements OnInit {
   orders: ProductOrders;
   total: number;
-  paid: boolean;
+  submitted: boolean;
   sub: Subscription;
 
   constructor(private ecommerceService: EcommerceService) {
@@ -19,15 +19,15 @@ export class OrdersComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.paid = false;
+    this.submitted = false;
     this.sub = this.ecommerceService.OrdersChanged.subscribe(() => {
       this.orders = this.ecommerceService.ProductOrders;
     });
     this.loadTotal();
   }
 
-  pay() {
-    this.paid = true;
+  submit() {
+    this.submitted = true;
     this.ecommerceService.saveOrder(this.orders).subscribe();
   }
 

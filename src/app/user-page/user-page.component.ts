@@ -39,6 +39,6 @@ export class UserPageComponent implements OnInit {
     this.orderFinished = false;
     this.productsC.reset();
     this.shoppingCartC.reset();
-    this.ordersC.paid = false;
+    this.ordersC.submitted = false;
   }
 }
