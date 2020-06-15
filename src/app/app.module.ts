@@ -21,6 +21,8 @@ import { UserPageComponent } from './user-page/user-page.component';
 import { ProductsComponent } from './user-page/products/products.component';
 import { OrdersComponent } from './user-page/orders/orders.component';
 import { ShoppingCartComponent } from './user-page/shopping-cart/shopping-cart.component';
+import { OrderPageComponent } from './order-page/order-page.component';
+import { OrderDescriptionComponent } from './order-page/order-description/order-description.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { ShoppingCartComponent } from './user-page/shopping-cart/shopping-cart.c
     UserPageComponent,
     ProductsComponent,
     OrdersComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    OrderPageComponent,
+    OrderDescriptionComponent
   ],
   imports: [
     BrowserModule,
