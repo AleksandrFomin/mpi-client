@@ -41,4 +41,9 @@ export class UserPageComponent implements OnInit {
     this.shoppingCartC.reset();
     this.ordersC.submitted = false;
   }
+
+  unfinishOrder(orderFinished: boolean) {
+    this.orderFinished = orderFinished;
+  }
+
 }

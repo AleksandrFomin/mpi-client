@@ -7,6 +7,7 @@
 <h3 class="text-right">Total amount: ${{ total }}</h3>
 
 <button class="btn btn-primary btn-block" (click)="submit()" *ngIf="!submitted">Submit</button>
+<button class="btn btn-info btn-block" (click)="back()">Back</button>
 
 <div class="alert alert-success" role="alert" *ngIf="submitted">
   <strong>Congratulation!</strong> You successfully made the order.

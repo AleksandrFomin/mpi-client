@@ -5,15 +5,13 @@ import {Subject} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 
 const PRODUCTS_API = 'http://localhost:8080/api/products/';
+const ORDERS_API = 'http://localhost:8080/api/orders/';
 
 @Injectable({
   providedIn: 'root'
 })
 @Injectable()
 export class EcommerceService {
-  private productsUrl = '/api/products';
-  private ordersUrl = '/api/orders';
-
   private productOrder: ProductOrder;
   private orders: ProductOrders = new ProductOrders();
 
@@ -35,7 +33,7 @@ export class EcommerceService {
   }
 
   saveOrder(order: ProductOrders) {
-    return this.http.post(this.ordersUrl, order);
+    return this.http.post(ORDERS_API, order);
   }
 
   set SelectedProductOrder(value: ProductOrder) {
