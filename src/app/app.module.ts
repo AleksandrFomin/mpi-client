@@ -23,6 +23,9 @@ import { OrdersComponent } from './user-page/orders/orders.component';
 import { ShoppingCartComponent } from './user-page/shopping-cart/shopping-cart.component';
 import { OrderPageComponent } from './order-page/order-page.component';
 import { OrderDescriptionComponent } from './order-page/order-description/order-description.component';
+import { SellerPageComponent } from './seller-page/seller-page.component';
+import { MyAdsComponent } from './seller-page/my-ads/my-ads.component';
+import { NewAdComponent } from './seller-page/new-ad/new-ad.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,10 @@ import { OrderDescriptionComponent } from './order-page/order-description/order-
     OrdersComponent,
     ShoppingCartComponent,
     OrderPageComponent,
-    OrderDescriptionComponent
+    OrderDescriptionComponent,
+    SellerPageComponent,
+    MyAdsComponent,
+    NewAdComponent
   ],
   imports: [
     BrowserModule,
