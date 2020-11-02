@@ -1,1 +1,66 @@
-<p>new-ad works!</p>
+<div class="col-md-12">
+  <div class="card card-container">
+    <form
+      name="form"
+      (ngSubmit)="f.form.valid && onSubmit()"
+      #f="ngForm"
+      novalidate
+    >
+      <div class="form-group">
+        <label for="name">Product name</label>
+        <input
+          type="text"
+          class="form-control"
+          name="name"
+          [(ngModel)]="form.name"
+          required
+          minlength="3"
+          maxlength="30"
+          #name="ngModel"
+        />
+        <div class="alert-danger" *ngIf="f.submitted && name.invalid">
+          <div *ngIf="name.errors.required">Product name is required</div>
+          <div *ngIf="name.errors.minlength">
+            Product name must be at least 3 characters
+          </div>
+          <div *ngIf="name.errors.maxlength">
+            Product name must be at most 30 characters
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input
+          type="number"
+          class="form-control"
+          name="price"
+          [(ngModel)]="form.price"
+          required
+          min="1"
+          max="100000"
+          #price="ngModel"
+        />
+        <div class="alert-danger" *ngIf="f.submitted && price.invalid">
+          <div *ngIf="price.errors.required">Price is required</div>
+          <div *ngIf="price.errors.min">
+            Price must be more than 1
+          </div>
+          <div *ngIf="price.errors.max">
+            Price must be less than 100000
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary btn-block">Create Ad</button>
+      </div>
+
+      <div class="alert alert-warning" *ngIf="f.submitted && isCreateFailed">
+        Signup failed!<br />{{ errorMessage }}
+      </div>
+    </form>
+
+    <div class="alert alert-success" *ngIf="isSuccessful">
+      Your registration is successful!
+    </div>
+  </div>
+</div>

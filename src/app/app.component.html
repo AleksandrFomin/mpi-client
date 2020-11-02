@@ -8,12 +8,18 @@
       <li class="nav-item" *ngIf="showAdminBoard">
         <a href="/admin" class="nav-link" routerLink="admin">Admin Board</a>
       </li>
+
       <li class="nav-item" *ngIf="showSellerBoard">
-        <a href="/seller" class="nav-link" routerLink="seller">Seller Board</a>
+        <a href="/seller-ads" class="nav-link" routerLink="seller-ads">My Ads</a>
       </li>
+      <li class="nav-item" *ngIf="showSellerBoard">
+        <a href="/seller-new-ad" class="nav-link" routerLink="seller-new-ad">New Ad</a>
+      </li>
+
       <li class="nav-item" *ngIf="showCarrierBoard">
         <a href="/carrier" class="nav-link" routerLink="carrier">Carrier Board</a>
       </li>
+
       <li class="nav-item" *ngIf="showUserBoard">
         <a href="/user" class="nav-link" routerLink="user">User</a>
       </li>
