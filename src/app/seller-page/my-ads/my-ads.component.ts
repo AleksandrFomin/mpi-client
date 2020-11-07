@@ -7,28 +7,8 @@ import {AdsService} from '../services/ads-service.service';
   styleUrls: ['./my-ads.component.css']
 })
 export class MyAdsComponent implements OnInit {
-  form: any = {};
-  isSuccessful = false;
-  isCreateFailed = false;
-  errorMessage = '';
-
-  constructor(private adsService: AdsService) {
-  }
+  constructor() { }
 
   ngOnInit() {
-  }
-
-  onSubmit() {
-    this.adsService.createAd(this.form).subscribe(
-      data => {
-        console.log(data);
-        this.isSuccessful = true;
-        this.isCreateFailed = false;
-      },
-      err => {
-        this.errorMessage = err.error.message;
-        this.isCreateFailed = true;
-      }
-    );
   }
 }

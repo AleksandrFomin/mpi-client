@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {AdsService} from '../services/ads-service.service';
+import {Advert} from '../../model/advert.model';
+import {Product} from '../../model/product.model';
 
 @Component({
   selector: 'app-new-ad',
@@ -6,10 +9,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./new-ad.component.css']
 })
 export class NewAdComponent implements OnInit {
+  form: any = {};
+  isSuccessful = false;
+  isCreateFailed = false;
+  errorMessage = '';
+  product: Product;
+  advert: Advert;
 
-  constructor() { }
+  constructor(private adsService: AdsService) {
+  }
 
   ngOnInit() {
   }
 
+  onSubmit() {
+    this.product = new Product(null, this.form.name, this.form.price, '');
+    this.advert = new Advert(this.product);
+    this.adsService.createAd(this.advert).subscribe(
+      data => {
+        console.log(data);
+        this.isSuccessful = true;
+        this.isCreateFailed = false;
+      },
+      err => {
+        this.errorMessage = err.error.message;
+        this.isCreateFailed = true;
+      }
+    );
+  }
 }
