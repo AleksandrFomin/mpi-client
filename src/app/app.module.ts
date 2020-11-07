@@ -26,6 +26,7 @@ import { OrderDescriptionComponent } from './order-page/order-description/order-
 import { SellerPageComponent } from './seller-page/seller-page.component';
 import { MyAdsComponent } from './seller-page/my-ads/my-ads.component';
 import { NewAdComponent } from './seller-page/new-ad/new-ad.component';
+import { ForbiddenPageComponent } from './forbidden-page/forbidden-page.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { NewAdComponent } from './seller-page/new-ad/new-ad.component';
     OrderDescriptionComponent,
     SellerPageComponent,
     MyAdsComponent,
-    NewAdComponent
+    NewAdComponent,
+    ForbiddenPageComponent
   ],
   imports: [
     BrowserModule,

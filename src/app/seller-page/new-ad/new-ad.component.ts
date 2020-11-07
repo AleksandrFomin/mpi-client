@@ -23,6 +23,8 @@ export class NewAdComponent implements OnInit {
   }
 
   onSubmit() {
+    this.isSuccessful = false;
+    this.isCreateFailed = false;
     this.product = new Product(null, this.form.name, this.form.price, '');
     this.advert = new Advert(this.product);
     this.adsService.createAd(this.advert).subscribe(

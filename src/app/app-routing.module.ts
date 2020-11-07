@@ -11,6 +11,7 @@ import {UserPageComponent} from './user-page/user-page.component';
 import {OrderPageComponent} from './order-page/order-page.component';
 import {NewAdComponent} from './seller-page/new-ad/new-ad.component';
 import {MyAdsComponent} from './seller-page/my-ads/my-ads.component';
+import {ForbiddenPageComponent} from './forbidden-page/forbidden-page.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'seller-new-ad', component: NewAdComponent },
   { path: 'carrier', component: BoardCarrierComponent },
   { path: 'admin', component: BoardAdminComponent },
+  { path: 'forbidden', component: ForbiddenPageComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
