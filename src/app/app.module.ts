@@ -18,7 +18,7 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { BoardSellerComponent } from './board-seller/board-seller.component';
 import { BoardCarrierComponent } from './board-carrier/board-carrier.component';
 import { UserPageComponent } from './user-page/user-page.component';
-import { ProductsComponent } from './user-page/products/products.component';
+import { AdvertsComponent } from './user-page/adverts/adverts.component';
 import { OrdersComponent } from './user-page/orders/orders.component';
 import { ShoppingCartComponent } from './user-page/shopping-cart/shopping-cart.component';
 import { OrderPageComponent } from './order-page/order-page.component';
@@ -40,7 +40,7 @@ import { ForbiddenPageComponent } from './forbidden-page/forbidden-page.componen
     BoardSellerComponent,
     BoardCarrierComponent,
     UserPageComponent,
-    ProductsComponent,
+    AdvertsComponent,
     OrdersComponent,
     ShoppingCartComponent,
     OrderPageComponent,

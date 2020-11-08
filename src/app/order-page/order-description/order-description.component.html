@@ -7,8 +7,8 @@
       </div>
       <div class="card-body">
         <ul>
-          <li *ngFor="let product of order.productOrders">
-            {{ product.product.name }} - ${{ product.product.price }} x {{ product.quantity}} kg
+          <li *ngFor="let advert of order.advertOrders">
+            {{ advert.advert.product.name }} - ${{ advert.advert.product.price }} x {{ advert.quantity}} kg
           </li>
         </ul>
         <h3 class="text-right">Total amount: ${{ total }}</h3>

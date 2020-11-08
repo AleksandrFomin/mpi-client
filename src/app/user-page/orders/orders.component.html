@@ -1,7 +1,7 @@
 <h2 class="text-center">ORDER</h2>
 <ul>
-  <li *ngFor="let order of orders.productOrders">
-    {{ order.product.name }} - ${{ order.product.price }} x {{ order.quantity}} kg
+  <li *ngFor="let order of orders.advertOrders">
+    {{ order.advert.product.name }} - ${{ order.advert.product.price }} x {{ order.quantity}} kg
   </li>
 </ul>
 <h3 class="text-right">Total amount: ${{ total }}</h3>

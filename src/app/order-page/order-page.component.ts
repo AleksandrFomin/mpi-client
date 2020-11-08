@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {ProductsComponent} from '../user-page/products/products.component';
+import {AdvertsComponent} from '../user-page/adverts/adverts.component';
 import {ShoppingCartComponent} from '../user-page/shopping-cart/shopping-cart.component';
 import {OrdersComponent} from '../user-page/orders/orders.component';
 import {OrderDescriptionComponent} from './order-description/order-description.component';
@@ -32,7 +32,7 @@ export class OrderPageComponent implements OnInit {
 
   reset() {
     this.orderFinished = false;
-    // this.productsC.reset();
+    // this.advertsC.reset();
     // this.shoppingCartC.reset();
     // this.ordersC.submitted = false;
   }

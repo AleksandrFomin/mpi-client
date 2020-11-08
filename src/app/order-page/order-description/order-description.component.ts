@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {OrdersService} from '../services/orders.service.service';
 import {Order} from '../../model/order.model';
-import {ProductOrder} from '../../model/product-order.model';
+import {AdvertOrder} from '../../model/advert-order.model';
 import {Subscription} from 'rxjs';
 import {Logger} from '@angular/compiler-cli/ngcc';
 
@@ -12,7 +12,7 @@ import {Logger} from '@angular/compiler-cli/ngcc';
 })
 export class OrderDescriptionComponent implements OnInit {
   orders: Order[] = [];
-  productOrders: ProductOrder[] = [];
+  productOrders: AdvertOrder[] = [];
   sub: Subscription;
   constructor(private ordersService: OrdersService) {
   }
@@ -32,8 +32,8 @@ export class OrderDescriptionComponent implements OnInit {
           this.orders = orders;
           console.log(orders);
           // this.orders.forEach(order => {
-          //   // this.productOrders.push(new ProductOrder(product, 0));
-          //   console.log(order.productOrders);
+          //   // this.advertOrders.push(new AdvertOrder(product, 0));
+          //   console.log(order.advertOrders);
           // });
         },
         (error) => console.log(error)

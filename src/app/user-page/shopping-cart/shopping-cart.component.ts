@@ -1,7 +1,7 @@
 import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
 import {Subscription} from 'rxjs';
-import {ProductOrders} from '../../model/product-orders.model';
-import {ProductOrder} from '../../model/product-order.model';
+import {AdvertOrders} from '../../model/advert-orders.model';
+import {AdvertOrder} from '../../model/advert-order.model';
 import {EcommerceService} from '../services/ecommerce.service.service';
 
 @Component({
@@ -11,7 +11,7 @@ import {EcommerceService} from '../services/ecommerce.service.service';
 })
 export class ShoppingCartComponent implements OnInit, OnDestroy {
   orderFinished: boolean;
-  orders: ProductOrders;
+  orders: AdvertOrders;
   total: number;
   sub: Subscription;
 
@@ -24,15 +24,15 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.orders = new ProductOrders();
+    this.orders = new AdvertOrders();
     this.loadCart();
     this.loadTotal();
   }
 
-  private calculateTotal(products: ProductOrder[]): number {
+  private calculateTotal(products: AdvertOrder[]): number {
     let sum = 0;
     products.forEach(value => {
-      sum += (value.product.price * value.quantity);
+      sum += (value.advert.product.price * value.quantity);
     });
     return sum;
   }
@@ -49,27 +49,28 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
 
   loadTotal() {
     this.sub = this.ecommerceService.OrdersChanged.subscribe(() => {
-      this.total = this.calculateTotal(this.orders.productOrders);
+      this.total = this.calculateTotal(this.orders.advertOrders);
     });
   }
 
   loadCart() {
-    this.sub = this.ecommerceService.ProductOrderChanged.subscribe(() => {
-      let productOrder = this.ecommerceService.SelectedProductOrder;
-      if (productOrder) {
-        this.orders.productOrders.push(new ProductOrder(
-          productOrder.product, productOrder.quantity));
+    this.sub = this.ecommerceService.AdvertOrderChanged.subscribe(() => {
+      let advertOrder = this.ecommerceService.SelectedProductOrder;
+      console.log(advertOrder);
+      if (advertOrder) {
+        this.orders.advertOrders.push(new AdvertOrder(
+          advertOrder.advert, advertOrder.quantity));
       }
-      this.ecommerceService.ProductOrders = this.orders;
-      this.orders = this.ecommerceService.ProductOrders;
-      this.total = this.calculateTotal(this.orders.productOrders);
+      this.ecommerceService.AdvertOrders = this.orders;
+      this.orders = this.ecommerceService.AdvertOrders;
+      this.total = this.calculateTotal(this.orders.advertOrders);
     });
   }
 
   reset() {
     this.orderFinished = false;
-    this.orders = new ProductOrders();
-    this.orders.productOrders = []
+    this.orders = new AdvertOrders();
+    this.orders.advertOrders = []
     this.loadTotal();
     this.total = 0;
   }

@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {ProductsComponent} from './products/products.component';
+import {AdvertsComponent} from './adverts/adverts.component';
 import {ShoppingCartComponent} from './shopping-cart/shopping-cart.component';
 import {OrdersComponent} from './orders/orders.component';
 
@@ -12,8 +12,8 @@ export class UserPageComponent implements OnInit {
   private collapsed = true;
   orderFinished = false;
 
-  @ViewChild('productsC', {static: false})
-  productsC: ProductsComponent;
+  @ViewChild('advertsC', {static: false})
+  advertsC: AdvertsComponent;
 
   @ViewChild('shoppingCartC', {static: false})
   shoppingCartC: ShoppingCartComponent;
@@ -37,7 +37,7 @@ export class UserPageComponent implements OnInit {
 
   reset() {
     this.orderFinished = false;
-    this.productsC.reset();
+    this.advertsC.reset();
     this.shoppingCartC.reset();
     this.ordersC.submitted = false;
   }

@@ -1,5 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {ProductOrders} from '../../model/product-orders.model';
+import {AdvertOrders} from '../../model/advert-orders.model';
 import {Subscription} from 'rxjs';
 import {EcommerceService} from '../services/ecommerce.service.service';
 
@@ -10,7 +10,7 @@ import {EcommerceService} from '../services/ecommerce.service.service';
 })
 export class OrdersComponent implements OnInit {
   orderFinished: boolean;
-  orders: ProductOrders;
+  orders: AdvertOrders;
   total: number;
   submitted: boolean;
   sub: Subscription;
@@ -20,7 +20,7 @@ export class OrdersComponent implements OnInit {
 
   constructor(private ecommerceService: EcommerceService) {
     this.orderFinished = true;
-    this.orders = this.ecommerceService.ProductOrders;
+    this.orders = this.ecommerceService.AdvertOrders;
     this.onReturnSave = new EventEmitter<boolean>();
     this.onReturnReset = new EventEmitter<void>();
   }
@@ -28,13 +28,17 @@ export class OrdersComponent implements OnInit {
   ngOnInit() {
     this.submitted = false;
     this.sub = this.ecommerceService.OrdersChanged.subscribe(() => {
-      this.orders = this.ecommerceService.ProductOrders;
+      this.orders = this.ecommerceService.AdvertOrders;
+      console.log('subscribe');
+      console.log(this.orders);
     });
     this.loadTotal();
   }
 
   submit() {
     this.submitted = true;
+    console.log('submit');
+    console.log(this.orders);
     this.ecommerceService.saveOrder(this.orders).subscribe();
   }
 

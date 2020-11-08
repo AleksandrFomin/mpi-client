@@ -6,13 +6,13 @@
     <h6 class="card-title">Items bought:</h6>
 
     <ul>
-      <li *ngFor="let order of orders.productOrders">
-        {{ order.product.name }} - {{ order.quantity}} kg.
+      <li *ngFor="let order of orders.advertOrders">
+        {{ order.advert.product.name }} - {{ order.quantity}} kg.
       </li>
     </ul>
 
     <button class="btn btn-light btn-block" (click)="finishOrder()"
-            [disabled]="orders.productOrders.length == 0">Make order
+            [disabled]="orders.advertOrders.length == 0">Make order
     </button>
   </div>
 </div>

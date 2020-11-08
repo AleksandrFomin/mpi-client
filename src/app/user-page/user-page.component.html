@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-9">
-    <app-products #productsC [hidden]="orderFinished"></app-products>
+    <app-products #advertsC [hidden]="orderFinished"></app-products>
   </div>
   <div class="col-md-3">
     <app-shopping-cart (onOrderFinished)=finishOrder($event) #shoppingCartC

@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import {ProductOrder} from '../../model/product-order.model';
-import {ProductOrders} from '../../model/product-orders.model';
+import {AdvertOrder} from '../../model/advert-order.model';
+import {AdvertOrders} from '../../model/advert-orders.model';
 import {Subject} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 
-const PRODUCTS_API = 'http://localhost:8080/api/products/';
+const ADVERTS_API = 'http://localhost:8080/api/ads/user';
 const ORDERS_API = 'http://localhost:8080/api/orders/';
 
 @Injectable({
@@ -12,45 +12,48 @@ const ORDERS_API = 'http://localhost:8080/api/orders/';
 })
 @Injectable()
 export class EcommerceService {
-  private productOrder: ProductOrder;
-  private orders: ProductOrders = new ProductOrders();
+  private advertOrder: AdvertOrder;
+  private orders: AdvertOrders = new AdvertOrders();
 
-  private productOrderSubject = new Subject();
+  private advertOrderSubject = new Subject();
   private ordersSubject = new Subject();
   private totalSubject = new Subject();
 
   private total: number;
 
-  ProductOrderChanged = this.productOrderSubject.asObservable();
+  AdvertOrderChanged = this.advertOrderSubject.asObservable();
   OrdersChanged = this.ordersSubject.asObservable();
   TotalChanged = this.totalSubject.asObservable();
 
   constructor(private http: HttpClient) {
   }
 
-  getAllProducts() {
-    return this.http.get(PRODUCTS_API);
+  getAllAdverts() {
+    return this.http.get(ADVERTS_API);
   }
 
-  saveOrder(order: ProductOrders) {
+  saveOrder(order: AdvertOrders) {
+    console.log('save');
+    console.log(JSON.stringify(order));
+    console.log(this.orders);
     return this.http.post(ORDERS_API, order);
   }
 
-  set SelectedProductOrder(value: ProductOrder) {
-    this.productOrder = value;
-    this.productOrderSubject.next();
+  set SelectedProductOrder(value: AdvertOrder) {
+    this.advertOrder = value;
+    this.advertOrderSubject.next();
   }
 
   get SelectedProductOrder() {
-    return this.productOrder;
+    return this.advertOrder;
   }
 
-  set ProductOrders(value: ProductOrders) {
+  set AdvertOrders(value: AdvertOrders) {
     this.orders = value;
     this.ordersSubject.next();
   }
 
-  get ProductOrders() {
+  get AdvertOrders() {
     return this.orders;
   }
 

@@ -1,13 +1,13 @@
-import {ProductOrder} from './product-order.model';
+import {AdvertOrder} from './advert-order.model';
 
 export class Order {
   id: number;
   status: string;
-  productOrders: ProductOrder[];
+  advertOrders: AdvertOrder[];
 
-  constructor(id: number, status: string, productOrders: ProductOrder[]) {
+  constructor(id: number, status: string, advertOrders: AdvertOrder[]) {
     this.id = id;
     this.status = status;
-    this.productOrders = productOrders;
+    this.advertOrders = advertOrders;
   }
 }
