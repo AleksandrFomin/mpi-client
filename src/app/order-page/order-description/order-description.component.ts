@@ -12,7 +12,7 @@ import {Logger} from '@angular/compiler-cli/ngcc';
 })
 export class OrderDescriptionComponent implements OnInit {
   orders: Order[] = [];
-  productOrders: AdvertOrder[] = [];
+  advertOrders: AdvertOrder[] = [];
   sub: Subscription;
   constructor(private ordersService: OrdersService) {
   }
@@ -25,14 +25,23 @@ export class OrderDescriptionComponent implements OnInit {
     });
   }
 
+  private calculateTotal(products: AdvertOrder[]): number {
+    let sum = 0;
+    products.forEach(value => {
+      sum += (value.advert.product.price * value.quantity);
+    });
+    return sum;
+  }
+
   loadOrders() {
     this.ordersService.getAllOrders()
       .subscribe(
         (orders: any[]) => {
           this.orders = orders;
+          console.log('orders');
           console.log(orders);
           // this.orders.forEach(order => {
-          //   // this.advertOrders.push(new AdvertOrder(product, 0));
+          //   // this.advertOrders.push(new AdvertOrder(, 0));
           //   console.log(order.advertOrders);
           // });
         },

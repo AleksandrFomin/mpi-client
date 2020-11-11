@@ -33,9 +33,6 @@ export class EcommerceService {
   }
 
   saveOrder(order: AdvertOrders) {
-    console.log('save');
-    console.log(JSON.stringify(order));
-    console.log(this.orders);
     return this.http.post(ORDERS_API, order);
   }
 

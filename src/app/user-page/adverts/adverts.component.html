@@ -6,12 +6,13 @@
       </div>
       <div class="card-body">
         <a href="#"><img class="card-img-top" src={{order.advert.product.pictureUrl}} alt=""></a>
-        <h5 class="card-title">${{order.advert.product.price}}</h5>
+        <h5 class="card-title">[seller-{{order.advert.seller}}]</h5>
+        <h4 class="card-title">${{order.advert.product.price}}</h4>
         <div class="row">
           <div class="col-4 padding-0" *ngIf="!isAdvertSelected(order.advert)">
             <input type="number" min="0" class="form-control" [(ngModel)]=order.quantity>
           </div>
-          <div class="col-4 padding-0" *ngIf="!isAdvertSelected(order.advert)">
+          <div class="col-8 padding-0" *ngIf="!isAdvertSelected(order.advert)">
             <button class="btn btn-primary" (click)="addToCart(order)"
                     [disabled]="order.quantity <= 0">Add To Cart
             </button>
