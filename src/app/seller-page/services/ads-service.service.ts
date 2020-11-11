@@ -15,4 +15,12 @@ export class AdsService {
   createAd(advert: Advert) {
     return this.http.post(ADS_API, advert);
   }
+
+  getAllAdverts() {
+    return this.http.get(ADS_API + 'seller');
+  }
+
+  deleteAdvert(advert: Advert) {
+    return this.http.post(ADS_API + 'delete', advert);
+  }
 }

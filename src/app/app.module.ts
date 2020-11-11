@@ -48,7 +48,7 @@ import { ForbiddenPageComponent } from './forbidden-page/forbidden-page.componen
     SellerPageComponent,
     MyAdsComponent,
     NewAdComponent,
-    ForbiddenPageComponent
+    ForbiddenPageComponent,
   ],
   imports: [
     BrowserModule,
