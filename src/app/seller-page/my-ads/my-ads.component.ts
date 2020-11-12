@@ -34,7 +34,11 @@ export class MyAdsComponent implements OnInit {
   }
 
   deleteAdvert(advert: Advert) {
-    this.adsService.deleteAdvert(advert).subscribe();
-    this.reloadData();
+    this.adsService.deleteAdvert(advert).subscribe(response => {
+      const index: number = this.adverts.indexOf(advert);
+      if (index !== -1) {
+        this.adverts.splice(index, 1);
+      }
+    });
   }
 }
