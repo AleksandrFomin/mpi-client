@@ -21,6 +21,10 @@ export class OrdersService {
     return this.http.get(ORDERS_API);
   }
 
+  getAllOrdersBySeller() {
+    return this.http.get(ORDERS_API + 'seller');
+  }
+
   get Orders(): Order[] {
     return this.orders;
   }

@@ -12,6 +12,7 @@ import {OrderPageComponent} from './order-page/order-page.component';
 import {NewAdComponent} from './seller-page/new-ad/new-ad.component';
 import {MyAdsComponent} from './seller-page/my-ads/my-ads.component';
 import {ForbiddenPageComponent} from './forbidden-page/forbidden-page.component';
+import {RequestsComponent} from './seller-page/requests/requests.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'carrier', component: BoardCarrierComponent },
   { path: 'admin', component: BoardAdminComponent },
   { path: 'forbidden', component: ForbiddenPageComponent },
+  { path: 'requests', component: RequestsComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
