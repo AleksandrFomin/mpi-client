@@ -14,6 +14,7 @@ export class OrderDescriptionComponent implements OnInit {
   orders: Order[] = [];
   advertOrders: AdvertOrder[] = [];
   sub: Subscription;
+  status: string;
   constructor(private ordersService: OrdersService) {
   }
 

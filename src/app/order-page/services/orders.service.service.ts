@@ -33,4 +33,8 @@ export class OrdersService {
     this.orders = value;
     this.ordersSubject.next();
   }
+
+  submit(order: Order) {
+    return this.http.post(ORDERS_API + 'submit', order);
+  }
 }

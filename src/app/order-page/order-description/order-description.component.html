@@ -12,6 +12,12 @@
           </li>
         </ul>
         <h4 class="text-right">Total amount: ${{ calculateTotal(order.advertOrders) }}</h4>
+        <div class="alert" role="alert" [ngClass]="{
+        'alert-primary': order.status == 'NEW',
+        'alert-warning': order.status == 'SUBMITTED'
+        }">
+          {{order.status}}
+        </div>
       </div>
     </div>
   </div>
