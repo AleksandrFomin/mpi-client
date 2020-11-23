@@ -5,7 +5,6 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
-import { BoardCarrierComponent } from './board-carrier/board-carrier.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import {UserPageComponent} from './user-page/user-page.component';
 import {OrderPageComponent} from './order-page/order-page.component';
@@ -13,6 +12,7 @@ import {NewAdComponent} from './seller-page/new-ad/new-ad.component';
 import {MyAdsComponent} from './seller-page/my-ads/my-ads.component';
 import {ForbiddenPageComponent} from './forbidden-page/forbidden-page.component';
 import {RequestsComponent} from './seller-page/requests/requests.component';
+import {CarrierPageComponent} from './carrier-page/carrier-page.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: 'orders', component: OrderPageComponent },
   { path: 'seller-ads', component: MyAdsComponent },
   { path: 'seller-new-ad', component: NewAdComponent },
-  { path: 'carrier', component: BoardCarrierComponent },
+  { path: 'carrier', component: CarrierPageComponent },
   { path: 'admin', component: BoardAdminComponent },
   { path: 'forbidden', component: ForbiddenPageComponent },
   { path: 'requests', component: RequestsComponent },

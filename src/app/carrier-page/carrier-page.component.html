@@ -1,0 +1,21 @@
+<h1>Waiting for delivery:</h1>
+<div class="alert alert-warning" *ngIf="failed">
+  Delivey failed!<br />{{ errorMessage }}
+</div>
+<div class="row card-deck" *ngFor="let order of orders">
+  <div class="col-lg-10 col-md-10 mb-10">
+    <div class="card text-center">
+      <div class="card-header">
+        <h4>Order #{{order.id}}</h4>
+      </div>
+      <div class="card-body">
+        <ul>
+          <li *ngFor="let advert of order.advertOrders">
+            {{ advert.advert.product.name }} x {{ advert.quantity}}
+          </li>
+        </ul>
+        <button class="btn btn-primary" (click)="deliver(order)">Deliver</button>
+      </div>
+    </div>
+  </div>
+</div>

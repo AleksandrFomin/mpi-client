@@ -30,8 +30,6 @@ export class RequestsComponent implements OnInit {
       .subscribe(
         (orders: any[]) => {
           this.orders = orders;
-          console.log('orders');
-          console.log(orders);
           // this.orders.forEach(order => {
           //   // this.advertOrders.push(new AdvertOrder(, 0));
           //   console.log(order.advertOrders);
@@ -48,11 +46,13 @@ export class RequestsComponent implements OnInit {
         this.orders.splice(index, 1);
       }
     });
+    this.orders = [];
     const currentRoute = this.router.url;
-
+    console.log(this.orders);
     this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
       this.router.navigate([currentRoute]); // navigate to same route
     });
     this.loadOrders();
+    this.ordersService.Orders = this.orders;
   }
 }

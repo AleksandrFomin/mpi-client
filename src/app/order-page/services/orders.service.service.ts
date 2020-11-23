@@ -25,6 +25,10 @@ export class OrdersService {
     return this.http.get(ORDERS_API + 'seller');
   }
 
+  getAllSubmittedOrders() {
+    return this.http.get(ORDERS_API + 'carrier');
+  }
+
   get Orders(): Order[] {
     return this.orders;
   }
@@ -36,5 +40,9 @@ export class OrdersService {
 
   submit(order: Order) {
     return this.http.post(ORDERS_API + 'submit', order);
+  }
+
+  deliver(order: Order) {
+    return this.http.post(ORDERS_API + 'deliver', order);
   }
 }

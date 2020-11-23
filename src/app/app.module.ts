@@ -28,6 +28,7 @@ import { MyAdsComponent } from './seller-page/my-ads/my-ads.component';
 import { NewAdComponent } from './seller-page/new-ad/new-ad.component';
 import { ForbiddenPageComponent } from './forbidden-page/forbidden-page.component';
 import {RequestsComponent} from './seller-page/requests/requests.component';
+import { CarrierPageComponent } from './carrier-page/carrier-page.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import {RequestsComponent} from './seller-page/requests/requests.component';
     NewAdComponent,
     ForbiddenPageComponent,
     RequestsComponent,
+    CarrierPageComponent,
   ],
   imports: [
     BrowserModule,
